@@ -14,6 +14,7 @@ Change these lines to your email and password from the yandex mail.
 ```
 yandex_login = your-mail@yandex.ru
 yandex_password = your-password
+to_mail = nikolay.blydov@gmail.com support@stafi.io
 ```
 Add the task to the crontab
 ```bash
@@ -21,5 +22,5 @@ crontab -e
 ```
 ```
 SHELL=/bin/bash
-*/5 * * * * python3 /path/to/stafi-node-monitor/main.py > /dev/null 2>&1
+*/5 * * * * cd ~/stafi-node-monitor/ && python3 ~/stafi-node-monitor/main.py > /dev/null 2>&1
 ```
