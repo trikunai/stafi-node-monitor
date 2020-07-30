@@ -1,0 +1,2 @@
+SHELL=/bin/bash
+*/5 * * * * python3 /path/to/stafi-node-monitor/main.py > /dev/null 2>&1
