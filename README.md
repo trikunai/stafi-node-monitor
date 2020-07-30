@@ -10,11 +10,11 @@ Edit conf file:
 ```bash
 nano conf.ini
 ```
-Change these lines to your email and password from the yandex mail.
+Change these lines to your email and password from the yandex mail and emails for notifications.
 ```
 yandex_login = your-mail@yandex.ru
 yandex_password = your-password
-to_mail = nikolay.blydov@gmail.com support@stafi.io
+to_mail = mail1@gmail.com mail2@gmail.com
 ```
 Add the task to the crontab
 ```bash
