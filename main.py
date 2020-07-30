@@ -105,7 +105,6 @@ def check_my_node():
 
 
 if __name__ == '__main__':
-    print(recipients)
     if check_my_node():
         version_check()
         peers_check()

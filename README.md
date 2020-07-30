@@ -3,6 +3,7 @@
 ```bash
 git clone https://github.com/nikolayqwerty/stafi-node-monitor.git
 cd stafi-node-monitor
+sudo apt install python3-pip
 pip3 install -r requirements.txt
 ```
 Edit conf file:
@@ -18,6 +19,7 @@ Add the task to the crontab
 ```bash
 crontab -e
 ```
-```SHELL=/bin/bash
+```
+SHELL=/bin/bash
 */5 * * * * python3 /path/to/stafi-node-monitor/main.py > /dev/null 2>&1
 ```
