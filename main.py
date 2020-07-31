@@ -58,14 +58,16 @@ def version_check():
 
 def peers_check():
     my_node = get_node_info(my_node_url, 'system_health')
-    if my_node['result']['peers'] < 20 or 0 < int(sentry_nodes_count) != my_node['result']['peers']:
+    if my_node['result']['peers'] > 20:
+        print('Peers check OK')
+    elif int(sentry_nodes_count) != 0 and int(sentry_nodes_count) == my_node['result']['peers']:
+        print('Peers check OK')
+    else:
         trust_node = get_node_info(trust_node_url, 'system_health')
         message = 'Low number of peers!\n' \
                   'You have {} peers.\n' \
                   'Trust node have {} peers.'.format(my_node['result']['peers'], trust_node['result']['peers'])
         send_email(message)
-    else:
-        print('Peers check OK')
 
 
 def new_blocks_check():
