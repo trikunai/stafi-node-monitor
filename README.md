@@ -1,5 +1,5 @@
 # stafi-node-monitor
-##Installation
+## Installation
 ```bash
 git clone https://github.com/nikolayqwerty/stafi-node-monitor.git
 cd stafi-node-monitor

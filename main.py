@@ -11,6 +11,7 @@ config = configparser.ConfigParser()
 config.read('conf.ini')
 trust_node_url = config['NODES']['trust_node_url']
 my_node_url = config['NODES']['my_node_url']
+sentry_nodes_count = config['NODES']['sentry_nodes_count']
 smtp_login = config['MAIL']['yandex_login']
 smtp_password = config['MAIL']['yandex_password']
 recipients = config['MAIL']['to_mail'].split(' ')
@@ -57,7 +58,7 @@ def version_check():
 
 def peers_check():
     my_node = get_node_info(my_node_url, 'system_health')
-    if my_node['result']['peers'] < 20:
+    if my_node['result']['peers'] < 20 or 0 < int(sentry_nodes_count) != my_node['result']['peers']:
         trust_node = get_node_info(trust_node_url, 'system_health')
         message = 'Low number of peers!\n' \
                   'You have {} peers.\n' \
