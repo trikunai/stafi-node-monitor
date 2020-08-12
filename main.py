@@ -12,8 +12,9 @@ config.read('conf.ini')
 trust_node_url = config['NODES']['trust_node_url']
 my_node_url = config['NODES']['my_node_url']
 sentry_nodes_count = config['NODES']['sentry_nodes_count']
-smtp_login = config['MAIL']['yandex_login']
-smtp_password = config['MAIL']['yandex_password']
+smtp_login = config['MAIL']['smtp_login']
+smtp_password = config['MAIL']['smtp_password']
+smtp_url = config['MAIL']['smtp_port']
 recipients = config['MAIL']['to_mail'].split(' ')
 
 def send_email(message):
